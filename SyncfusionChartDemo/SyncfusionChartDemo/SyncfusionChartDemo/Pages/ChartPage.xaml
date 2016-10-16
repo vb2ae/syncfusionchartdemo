@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:chart="clr-namespace:Syncfusion.SfChart.XForms;assembly=Syncfusion.SfChart.XForms"
+             x:Class="SyncfusionChartDemo.Pages.ChartPage">
+  <Grid>
+    <Grid.RowDefinitions>
+      <RowDefinition Height="20"></RowDefinition>
+      <RowDefinition></RowDefinition>
+    </Grid.RowDefinitions>
+    <Label Grid.Row="0" Text="{Binding Title}" HorizontalTextAlignment="Center"></Label>
+    <chart:SfChart Grid.Row="1">
+      <chart:SfChart.Title>
+        <chart:ChartTitle Text="{Binding ChartTitle}"/>
+      </chart:SfChart.Title>
+      <chart:SfChart.PrimaryAxis>
+        <chart:CategoryAxis>
+          <chart:CategoryAxis.Title>
+            <chart:ChartAxisTitle Text="Month"></chart:ChartAxisTitle>
+          </chart:CategoryAxis.Title>
+        </chart:CategoryAxis>
+      </chart:SfChart.PrimaryAxis>
+      <chart:SfChart.SecondaryAxis>
+        <chart:NumericalAxis>
+          <chart:NumericalAxis.Title>
+            <chart:ChartAxisTitle Text="Month"></chart:ChartAxisTitle>
+          </chart:NumericalAxis.Title>
+        </chart:NumericalAxis>
+      </chart:SfChart.SecondaryAxis>
+      <chart:SfChart.Series>
+        <chart:ColumnSeries ItemsSource = "{Binding HighTemperature}"/>
+      </chart:SfChart.Series>
+    </chart:SfChart>
+  </Grid>
+</ContentPage>
